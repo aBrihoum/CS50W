@@ -1,0 +1,36 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+{% block title %}
+    {% if category_name %}
+        {{ category_name }} - Auction
+    {% elif my_listings %}
+        My listings - Auction
+    {% elif closed_listings %}
+        Closed listings - Auction
+    {% elif watchlist %}
+        Watchlist - Auction
+    {% else %}
+        Home - Auction
+    {% endif %}
+{% endblock title %}
+{% block body %}
+    <div class="container" page='index'>
+        <div class="row gy-3">
+            {% if category_name %}
+                <h1 class="mb-4">
+                    <span class="badge bg-dark">{{ category_name }} :</span>
+                </h1>
+            {% endif %}
+            {% for listing in listings %}
+                {% include "auctions/inc/items.html" %}
+            {% empty %}
+                <div class="text-center">
+                    <h2 style="font-family: fantasy">{{ empty_message }}</h2>
+                    <img class="img-fluid"
+                         src="{% static 'auctions/images/empty.webp' %}"
+                         width="500"/>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock body %}

@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'encyclopedia/styles.css' %}" rel="stylesheet">
+        <link href="{% static 'encyclopedia/favicon.ico' %}" rel="shortcut icon">
+    </head>
+    <body>
+        {% comment %} added .container-fluid, because the page had an x-overflow {% endcomment %}
+        <div class="container-fluid">
+        <div class="row">
+            <div class="sidebar col-xl-2 col-md-3">
+                <a href="{% url 'index' %}" style="color:inherit; text-decoration: none;">
+                <h2>Wiki</h2>
+                </a>
+                <form action="{% url 'search' %}" method="post" class="py-2">
+                    {% csrf_token %}
+                    <input list="search-input" class="search form-control" type="text" name="q" placeholder="Search Encyclopedia">
+                <datalist id="search-input">
+                {% for entry in entries_context %}
+                    <option value="{{entry}}">
+                {% endfor %}
+                </datalist>
+                </form>
+                <div class="py-1">
+                    <a href="{% url 'index' %}">Home</a>
+                </div>
+                <div class="py-1">
+                    <a href="{% url 'new' %}">Create New Page</a>
+                </div>
+                <div class="py-1">
+                     <a href="{% url 'random' %}">Random Page</a>
+                </div>
+                {% block nav %}
+                {% endblock %}
+            </div>
+            <div class="main col-xl-10 col-md-9">
+                {% block body %}
+                {% endblock %}
+            </div>
+        </div>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            {% block title %}
+            {% endblock title %}
+        </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+              rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+              rel="stylesheet"/>
+        <link href="{% static 'auctions/styles.css' %}" rel="stylesheet"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body class="mb-5">
+        <nav class="navbar navbar-expand-xxl navbar-dark bg-dark mb-5">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'index' %}">
+                    <img src="{% static 'auctions/images/logo.webp' %}"
+                         width='200'
+                         alt="auction"/>
+                </a>
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'index' %}"> <img src="{% static 'auctions/images/check.png' %}" width=20 /> Active Listings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'closed_listings' %}"> <img src="{% static 'auctions/images/cancel.png' %}" width=20 /> Closed Listings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'category' %}"> <img src="{% static 'auctions/images/menu.png' %}" width=20 /> Categories</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'watchlist' %}"> <img src="{% static 'auctions/images/watchlist-g.webp' %}" width=20 /> Watchlist
+                                    {% if watchlist_length != 0 %}<span class="badge text-bg-light">{{ watchlist_length }}</span>{% endif %}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'my_listings' %}"><img src="{% static 'auctions/images/listings.png' %}" width=20 /> My listing</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'new_listing' %}"><img src="{% static 'auctions/images/plus.png' %}" width=20 /> New listing</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                    <div>
+                        {% if user.is_authenticated %}
+                            <span class="text-white-50 me-1" style="font-size: 15px">Welcome {{ user.username }}</span>
+                            <a class="d-inline-block" href="{% url 'logout' %}">
+                                <button class="btn btn-danger">
+                                    Log
+                                    Out
+                                </button>
+                            </a>
+                        {% else %}
+                            <div class="login-btn" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                <img src="{% static 'auctions/images/user.png' %}" alt="user" width="35"/>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </nav>
+        {% comment %} ------ LOGIN MODAL -------- {% endcomment %}
+        <div class="modal fade"
+             id="loginModal"
+             tabindex="-1"
+             aria-labelledby="loginModal"
+             aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <button class="nav-link active"
+                                        id="nav-login-tab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#nav-login"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="nav-login"
+                                        aria-selected="true">
+                                    Log In
+                                </button>
+                                <button class="nav-link"
+                                        id="nav-register-tab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#nav-register"
+                                        type="button"
+                                        role="tab"
+                                        aria-controls="nav-register"
+                                        aria-selected="true">
+                                    Register
+                                </button>
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active"
+                                 id="nav-login"
+                                 role="tabpanel"
+                                 aria-labelledby="nav-login-tab"
+                                 tabindex="0">
+                                {% include "auctions/inc/login.html" %}
+                            </div>
+                            <div class="tab-pane fade"
+                                 id="nav-register"
+                                 role="tabpanel"
+                                 aria-labelledby="nav-register-tab"
+                                 tabindex="0">
+                                {% include "auctions/inc/register.html" %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% comment %} ------ LOG MODAL -------- {% endcomment %}
+        {% block body %}
+        {% endblock body %}
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+</html>

@@ -1,0 +1,20 @@
+.i-text {
+  color: #4285f4;
+  font-family: roboto-regular, arial, sans-serif;
+  font-size: 16px;
+  position: absolute;
+  left: 215px;
+  bottom: -1px;
+}
+.g-image-container {
+  position: relative;
+}
+.search-input {
+  background-image: url(/assets/images/svg/search.svg),
+    url(/assets/images/camera.png), url(/assets/images/svg/voice.svg),
+    url(/assets/images/svg/search-b.svg);
+  background-repeat: no-repeat;
+  background-size: 20px, 24px, 24px, 24px;
+  background-position: 14px 12px, calc(100% - 100px), calc(100% - 60px),
+    calc(100% - 16px);
+}

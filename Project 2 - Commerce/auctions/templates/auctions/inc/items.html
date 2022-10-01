@@ -1,0 +1,76 @@
+<div class="col-xl-3 col-lg-4 col-sm-6">
+    <div class="item-container position-relative">
+        <a href="{% url 'view_listing' listing.id %}">
+            <div class="image"
+                 style="background-image:url({{ listing.image_url }})"
+                 alt="{{ listing.title }}"></div>
+            <div class="info">
+                <div class="title">
+                    <span>{{ listing.title }}</span>
+                    <div class="category">
+                        <span class="badge bg-dark">{{ listing.category }}</span>
+                        <span class="text-muted">- Listed By : ({{ listing.by.username }})</span>
+                    </div>
+                </div>
+                <div class="description">
+                    <span>{{ listing.description }}</span>
+                </div>
+                <div class="price text-break">
+                    <span>$
+                        {% if listing.bidders_list.last.bid %}
+                            {{ listing.bidders_list.last.bid }}
+                        {% else %}
+                            {{ listing.starting_bid }}
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+        </a>
+        {% if listing.by == user and my_listings %}
+            <div class="listing-actions">
+                <div class="dropdown">
+                    <button class="btn-close listing-actions" data-bs-toggle="dropdown"></button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{% url 'listing_actions' 'edit' listing.id %}">
+                                <button class="dropdown-item" type="button">Edit the auction</button>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'listing_actions' 'delete' listing.id %}">
+                                <button class="dropdown-item" type="button">Delete the auction</button>
+                            </a>
+                        </li>
+                        <li>
+                            {% if not listing.is_active %}
+                                <a href="{% url 'listing_actions' 'open' listing.id %}">
+                                    <button class="dropdown-item" type="button">Open the auction</button>
+                                </a>
+                            {% else %}
+                                <a href="{% url 'listing_actions' 'close' listing.id %}">
+                                    <button class="dropdown-item" type="button">Close the auction</button>
+                                </a>
+                            {% endif %}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        {% endif %}
+        {% if watchlist %}
+            <div class="listing-actions">
+                <div class="dropdown">
+                    <button class="btn-close listing-actions" data-bs-toggle="dropdown"></button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <form action="{% url 'watchlist' %}" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="listing_id" value="{{ listing.id }}" />
+                                <button class="dropdown-item" type="submit">Remove from watchlist</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>

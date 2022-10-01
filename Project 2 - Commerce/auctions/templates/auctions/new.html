@@ -1,0 +1,68 @@
+{% extends "auctions/layout.html" %}
+{% block title %}
+  New listing - Auction
+{% endblock title %}
+{% block body %}
+  <div class="container">
+    {% if empty_input %}
+      <div class="alert alert-danger" role="alert">
+        Please fill out all required fields :
+        {{ empty_input }}
+      </div>
+    {% endif %}
+    {% if cat_error %}<div class="alert alert-danger" role="alert">{{ cat_error }}</div>{% endif %}
+    <form action="{% url 'new_listing' %}" method="post">
+      {% csrf_token %}
+      <div class="my-3">{{ form.title }}</div>
+      <div class="my-3">{{ form.description }}</div>
+      <div class="my-3">{{ form.is_editing }}</div>
+      <div class="my-3">{{ form.listing_id }}</div>
+      <div class="row align-items-center">
+        <div class="col-sm-5">{{ form.category }}</div>
+        <div class="col-sm-2 text-center">-OR-</div>
+        <div class="col-sm-5">
+          <button type="button"
+                  class="btn btn-primary w-100"
+                  data-bs-toggle="modal"
+                  data-bs-target="#newCatModal">
+            Create a new Category
+          </button>
+        </div>
+      </div>
+      <div class="my-3">{{ form.starting_bid }}</div>
+      <div class="my-3">
+        <div class="form-check form-switch">
+          {{ form.is_active }}
+          <label class="form-check-label" for="switch">Active Listing</label>
+        </div>
+      </div>
+      <div class="my-3">{{ form.image_url }}</div>
+      <button type="submit" class="btn btn-primary">Save</button>
+      <a href="{% url 'index' %}">
+        <button type="button" class="btn btn-danger">Cancel</button>
+      </a>
+    </form>
+  </div>
+  <div class="modal fade" id="newCatModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Create a new category</h5>
+          <button type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+        </div>
+        <div class="modal-body pt-2">
+          <form action="{% url 'new_category' %}" method="post">
+            {% csrf_token %}
+            <div class="mb-3">{{ new_cat_form.catname }}</div>
+            <div class="float-right">
+              <button type="submit" class="btn btn-primary">Add category</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock body %}

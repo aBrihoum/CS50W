@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Google Images</title>
+        <link rel="shortcut icon" href="./assets/images/favicon.ico" />
+        <!-- index & images share the same style (index.css) with some modifications (images.css) -->
+        <link rel="stylesheet" href="./assets/styles/index.css" />
+        <link rel="stylesheet" href="./assets/styles/images.css" />
+    </head>
+
+    <body>
+        <div class="links-container">
+            <div class="link">
+                <a href="./index.html">Google Search</a>
+            </div>
+            <div class="link">
+                <a href="./advanced.html">Advanced Search</a>
+            </div>
+        </div>
+
+        <div class="main-container">
+            <div class="g-image-container">
+                <img src="./assets/images/google.png" alt="Google Logo" />
+                <span class="i-text">images</span>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <form action="https://google.com/search" method="get">
+                <input type="text" name="q" class="search-input" />
+                <div class="btns-container">
+                    <input type="submit" value="Image Search" />
+                    <input type="hidden" name="tbm" value="isch" />
+                </div>
+            </form>
+        </div>
+    </body>
+
+</html>

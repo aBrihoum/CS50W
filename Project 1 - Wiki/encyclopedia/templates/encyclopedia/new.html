@@ -1,0 +1,46 @@
+{% extends "encyclopedia/layout.html" %} 
+
+{% block title %}
+
+{% if not is_editing %}
+Create a new Page 
+{% else %}
+Edit - {{form.fields.title.initial}}
+{% endif %}
+
+{%endblock %} 
+
+{% block body %}
+
+<div class="container">
+
+{% if entry_exist %}
+
+<div class="alert alert-danger" role="alert">
+  This <b> <a href="wiki/{{ entry_title }}" target="_blank">page already exists</a> </b>
+</div>
+
+{% endif %}
+
+{% if empty_input %}
+
+<div class="alert alert-danger" role="alert">
+  Please fill out all required fields :  </b>
+  {{empty_input}}
+</div>
+
+{% endif %}
+
+  <form action="{% url 'new' %}" method="post">
+    {% csrf_token %}
+    {% if is_editing %}<div class="form-group">{{form.title_disabled}}</div>{% endif %}
+    <div class="form-group">{{form.title}}</div>
+    <div class="form-group">{{form.body}}</div>
+    <div>{{form.is_editing}}</div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a href="{% url 'index' %}">
+      <button type="button" class="btn btn-danger">Cancel</button>
+    </a>
+  </form>
+</div>
+{% endblock %}

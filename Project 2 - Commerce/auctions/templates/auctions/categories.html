@@ -1,0 +1,32 @@
+{% extends "auctions/layout.html" %}
+{% load static %}
+{% block title %}
+    Categories - Auction
+{% endblock title %}
+{% block body %}
+    <div class="container" page='category'>
+        <div class="row gy-3 justify-content-center">
+            {% for category in categories %}
+                <div class="col-lg-3 col-md-4 col-sm-6 col-10">
+                    <div class="cat-container position-relative">
+                        <img class="cat-pic" src="https://picsum.photos/100?random={{ category.id }}" alt={{ category.catname }} />
+                        <form action="{% url 'category' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="category_id" value="{{ category.id }}" />
+                            <button class="cat-name-container btn badge text-bg-light py-2 px-4">
+                                {{ category.catname }}
+                            </form>
+                        </button>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="text-center">
+                    <h2 style="font-family: fantasy">There are no categories !</h2>
+                    <img class="img-fluid"
+                         src="{% static 'auctions/images/empty.webp' %}"
+                         width="500"/>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock body %}

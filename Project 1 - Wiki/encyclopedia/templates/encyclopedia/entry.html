@@ -1,0 +1,23 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+
+ Wiki - {{entry_title}}
+
+{% endblock %}
+
+
+{% block body %}
+<div class="container">
+<div class="entry-box">
+    {{entry_content | safe}}
+</div>
+<hr>
+<a class="text-white" href="{% url 'edit' entry_title=entry_title %}">
+    <button type="submit" class="btn btn-primary">Edit</button>
+</a>
+</div>
+
+
+
+{% endblock %}
