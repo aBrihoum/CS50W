@@ -24,7 +24,7 @@
 1. Download the project :
 
 ```
-https://github.com/aBrihoum/CS50W/raw/master/zipped-src/project-2.zip
+https://github.com/aBrihoum/CS50W/raw/master/zipped-src/project-1.zip
 ```
 
 2. Navigate to `Project 1 - Wiki/`.
