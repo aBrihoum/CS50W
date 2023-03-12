@@ -16,7 +16,7 @@
 
 <div align="center">
 <a href="https://youtu.be/h6XkrUb5NXU" target="_blank" rel="noopener noreferrer">
-<img width="600" src="https://i.imgur.com/TxIjVJc.png" style="border:1.5px solid #343b44;padding:5px;border-radius:15px">
+<kbd><img width="600" src="https://i.ibb.co/NpcXLKq/project-2.webp"></kbd>
 </a></div>
 
 ### Quick start
@@ -24,7 +24,7 @@
 1. Download the project :
 
 ```
-https://raw.githubusercontent.com/aBrihoum/CS50W/master/zipped-src/project-2-src.zip
+https://github.com/aBrihoum/CS50W/raw/master/zipped-src/project-1.zip
 ```
 
 2. Navigate to `Project 2 - Commerce/`.

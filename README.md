@@ -17,7 +17,7 @@ My 'Harvard's CS50W Web Programming with Python and JavaScript' Projects
 
 <div align="center">
 <a href="https://youtu.be/EQiRahY8rEQp" target="_blank" rel="noopener noreferrer">
-<img width="600" src="https://i.imgur.com/KvqVOAQ.png" style="border:2px solid #343b44;padding:5px;border-radius:15px">
+<kbd><img width="600" src="https://i.ibb.co/gVNPX43/project-0.webp"></kbd>
 </a>
 </div>
 
@@ -31,7 +31,7 @@ My 'Harvard's CS50W Web Programming with Python and JavaScript' Projects
 
 <div align="center">
 <a href="https://youtu.be/C2PkacDEohA" target="_blank" rel="noopener noreferrer">
-<img width="600" src="https://i.imgur.com/GTQ74JI.png" style="border:2px solid #343b44;padding:5px;border-radius:15px">
+<kbd><img width="600" src="https://i.ibb.co/6JR9J5v/project-1.webp"></kbd>
 </a>
 </div>
 
@@ -45,7 +45,7 @@ My 'Harvard's CS50W Web Programming with Python and JavaScript' Projects
 
 <div align="center">
 <a href="https://youtu.be/h6XkrUb5NXU" target="_blank" rel="noopener noreferrer">
-<img width="600" src="https://i.imgur.com/TxIjVJc.png" style="border:2px solid #343b44;padding:5px;border-radius:15px">
+<kbd><img width="600" src="https://i.ibb.co/NpcXLKq/project-2.webp"></kbd>
 </a>
 </div>
 

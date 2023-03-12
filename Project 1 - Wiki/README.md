@@ -16,7 +16,7 @@
 
 <div align="center">
 <a href="https://youtu.be/C2PkacDEohA" target="_blank" rel="noopener noreferrer">
-<img width="600" src="https://i.imgur.com/GTQ74JI.png" style="border:1.5px solid #343b44;padding:5px;border-radius:15px">
+<kbd><img width="600" src="https://i.ibb.co/6JR9J5v/project-1.webp"></kbd>
 </a></div>
 
 ### Quick start
@@ -24,7 +24,7 @@
 1. Download the project :
 
 ```
-https://raw.githubusercontent.com/aBrihoum/CS50W/master/zipped-src/project-1-src.zip
+https://github.com/aBrihoum/CS50W/raw/master/zipped-src/project-2.zip
 ```
 
 2. Navigate to `Project 1 - Wiki/`.

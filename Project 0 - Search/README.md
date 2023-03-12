@@ -17,7 +17,7 @@
 
 <div align="center">
 <a href="https://youtu.be/EQiRahY8rEQp" target="_blank" rel="noopener noreferrer">
-<img width="600" src="https://i.imgur.com/KvqVOAQ.png" style="border:1.5px solid #343b44;padding:5px;border-radius:15px">
+<kbd><img width="600" src="https://i.ibb.co/gVNPX43/project-0.webp"></kbd>
 </a></div>
 
 ### Quick start
@@ -25,7 +25,7 @@
 1. Download the project :
 
 ```
-https://raw.githubusercontent.com/aBrihoum/CS50W/master/zipped-src/project-0-src.zip
+https://github.com/aBrihoum/CS50W/raw/master/zipped-src/project-0.zip
 ```
 
 2. Navigate to `Project 0 - Search/`
