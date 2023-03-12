@@ -1,10 +1,8 @@
 # Project 1 - Wiki
 
----
-
 #### Description :
 
-Design a Wikipedia-like online encyclopedia.
+*Design a Wikipedia-like online encyclopedia.*
 
 #### Demo :
 
@@ -16,19 +14,20 @@ Design a Wikipedia-like online encyclopedia.
 
 #### Screenshot :
 
-<p align="center">
-<img width="800" src="https://i.imgur.com/GTQ74JI.png">
-</p>
+<div align="center">
+<a href="https://youtu.be/C2PkacDEohA" target="_blank" rel="noopener noreferrer">
+<img width="600" src="https://i.imgur.com/GTQ74JI.png" style="border:1.5px solid #343b44;padding:5px;border-radius:15px">
+</a></div>
 
 ### Quick start
 
 1. Download the project :
 
 ```
-https://downgit.github.io/#/home?url=https://github.com/aBrihoum/CS50W/tree/master/Project%201/wiki
+https://raw.githubusercontent.com/aBrihoum/CS50W/master/zipped-src/project-1-src.zip
 ```
 
-2. Navigate to `wiki/`.
+2. Navigate to `Project 1 - Wiki/`.
 
 3. Run `python manage.py runserver`.
 

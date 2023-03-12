@@ -2,7 +2,7 @@
 
 #### Description :
 
-Design an eBay-like e-commerce auction site that will allow users to post auction listings, place bids on listings, comment on those listings, and add listings to a “watchlist.”
+*Design an eBay-like e-commerce auction site that will allow users to post auction listings, place bids on listings, comment on those listings, and add listings to a “watchlist.”*
 
 #### Demo :
 
@@ -14,19 +14,20 @@ Design an eBay-like e-commerce auction site that will allow users to post auctio
 
 #### Screenshot :
 
-<p align="center">
-<img width="800" src="https://i.imgur.com/TxIjVJc.png">
-</p>
+<div align="center">
+<a href="https://youtu.be/h6XkrUb5NXU" target="_blank" rel="noopener noreferrer">
+<img width="600" src="https://i.imgur.com/TxIjVJc.png" style="border:1.5px solid #343b44;padding:5px;border-radius:15px">
+</a></div>
 
 ### Quick start
 
 1. Download the project :
 
 ```
-https://downgit.github.io/#/home?url=https://github.com/aBrihoum/CS50W/tree/master/Project%202/commerce
+https://raw.githubusercontent.com/aBrihoum/CS50W/master/zipped-src/project-2-src.zip
 ```
 
-2. Navigate to `commerce/`.
+2. Navigate to `Project 2 - Commerce/`.
 
 3. Run `python manage.py makemigrations auctions`.
 

@@ -1,10 +1,9 @@
 # Project 0 - Search
 
----
 
 #### Description
 
-Design a front-end for Google Search, Google Image Search, and Google Advanced Search.
+*Design a front-end for Google Search, Google Image Search, and Google Advanced Search.*
 
 #### Demo :
 
@@ -16,18 +15,19 @@ Design a front-end for Google Search, Google Image Search, and Google Advanced S
 
 #### Screenshot :
 
-<p align="center">
-<img width="800" src="https://i.imgur.com/KvqVOAQ.png">
-</p>
+<div align="center">
+<a href="https://youtu.be/EQiRahY8rEQp" target="_blank" rel="noopener noreferrer">
+<img width="600" src="https://i.imgur.com/KvqVOAQ.png" style="border:1.5px solid #343b44;padding:5px;border-radius:15px">
+</a></div>
 
 ### Quick start
 
 1. Download the project :
 
 ```
- https://downgit.github.io/#/home?url=https://github.com/aBrihoum/CS50W/tree/master/Project%200/search
+https://raw.githubusercontent.com/aBrihoum/CS50W/master/zipped-src/project-0-src.zip
 ```
 
-2. Navigate to `search/`
+2. Navigate to `Project 0 - Search/`
 
 3. Open `index.html`
